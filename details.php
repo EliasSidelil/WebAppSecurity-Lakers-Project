@@ -38,13 +38,13 @@
                                
                                <div class="carousel-inner">
                                    <div class="item active">
-                                       <center><img class="img-responsive" src="admin/product_images/Product 3-a.jpg" alt="Product 3-a"></center>
+                                       <center><img class="img-responsive" src="admin/product_images/<?php echo $pro_img1; ?>" alt="Product 3-a"></center>
                                    </div>
                                    <div class="item">
-                                       <center><img class="img-responsive" src="admin/product_images/Product 3-b.jpg" alt="Product 3-b"></center>
+                                       <center><img class="img-responsive" src="admin/product_images/<?php echo $pro_img2; ?>" alt="Product 3-b"></center>
                                    </div>
                                    <div class="item">
-                                       <center><img class="img-responsive" src="admin/product_images/Product 3-c.jpg" alt="Product 3-c"></center>
+                                       <center><img class="img-responsive" src="admin/product_images/<?php echo $pro_img3; ?>" alt="Product 3-c"></center>
                                    </div>
                                </div>
                                
@@ -64,9 +64,9 @@
                    
                    <div class="col-sm-6"><!-- col-sm-6 Begin -->
                        <div class="box"><!-- box Begin -->
-                           <h1 class="text-center">Le Brone Jersey</h1>
+                           <h1 class="text-center"> <?php echo $pro_title; ?> </h1>
                            
-                           <form action="details.php" class="form-horizontal" method="post"><!-- form-horizontal Begin -->
+                           <form action="index.php?add_cart=<?php echo $pro_id; ?>" class="form-horizontal" method="post"><!-- form-horizontal Begin -->
                                <div class="form-group"><!-- form-group Begin -->
                                    <label for="" class="col-md-5 control-label">Products Quantity</label>
                                    
@@ -84,7 +84,7 @@
                                </div><!-- form-group Finish -->
                                
                                
-                               <p class="price">$50</p>
+                               <p class="price">€ <?php echo $pro_price; ?></p>
                                
                                <p class="text-center buttons"><button class="btn btn-primary i fa fa-shopping-cart"> Add to cart</button></p>
                                
@@ -102,21 +102,10 @@
                    
                    <p>
                        
-                       Quality Lakers products wowowowowowowow
-                       wowowowowow Lakers
+                       <?php echo $pro_desc; ?>
                        
                    </p>
-                   
-                       <!-- <h4>Size</h4>
-                       
-                       <ul>
-                           <li>Small</li>
-                           <li>Medium</li>
-                           <li>Large</li>
-                       </ul>  
-                       
-                       <hr> -->
-                   
+                  
                </div><!-- box Finish -->
                    
                </div><!-- row Finish -->
