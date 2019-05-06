@@ -1,3 +1,10 @@
+<?php 
+
+include("includes/db.php");
+include("functions/functions.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +77,7 @@
                    
                    <i class="fa fa-shopping-cart"></i>
                    
-                   <span>4 Items In Your Cart</span>
+                   <span><?php items(); ?> Items In Your Cart</span>
                    
                </a><!-- btn navbar-btn btn-primary Finish -->
                
