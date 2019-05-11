@@ -4,7 +4,7 @@
         
         <center><!--  center  Begin  -->
             
-            <img src="customer_images/elias.jpg" alt="Mdev Profile">
+            <img src="customer_images/elias.jpg" alt="Elias Profile">
             
         </center><!--  center  Finish  -->
         

@@ -1,5 +1,6 @@
 <?php 
 
+session_start(); 
 include("includes/db.php");
 include("functions/functions.php")
 
@@ -28,6 +29,29 @@ include("functions/functions.php")
            </div><!-- col-md-6 offer Finish -->
            
            <div class="col-md-6"><!-- col-md-6 Begin -->
+
+                    <ul class="menu">
+                       
+                      <li>
+                       <a>
+                         
+                          <?php 
+                   
+                            if(!isset($_SESSION['customer_email'])){
+                       
+                                echo "Welcome: Guest";
+                       
+                           }else{
+                       
+                                 echo "Welcome: " . $_SESSION['customer_email'] . "";
+                             }
+                   
+                           ?>
+
+                       </a>
+                      </li>
+
+                   </ul>
                
                <ul class="menu"><!-- cmenu Begin -->
                    
@@ -41,7 +65,22 @@ include("functions/functions.php")
                        <a href="../cart.php">Go To Cart</a>
                    </li>
                    <li>
-                       <a href="../checkout.php">Login</a>
+                       <a href="../checkout.php">
+                         
+                           <?php 
+                           
+                           if(!isset($_SESSION['customer_email'])){
+                       
+                                echo "<a href='checkout.php'> Login </a>";
+
+                               }else{
+
+                                echo " <a href='logout.php'> Log Out </a> ";
+
+                               }
+                           
+                           ?>
+                       </a>
                    </li>
                    
                </ul><!-- menu Finish -->

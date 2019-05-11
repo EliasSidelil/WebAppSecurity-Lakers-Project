@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2019 at 01:31 AM
+-- Generation Time: May 11, 2019 at 10:38 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -34,13 +34,32 @@ CREATE TABLE `tbl_cart` (
   `qty` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tbl_cart`
+-- Table structure for table `tbl_customer`
 --
 
-INSERT INTO `tbl_cart` (`p_id`, `ip_add`, `qty`) VALUES
-(7, '::1', 1),
-(8, '::1', 2);
+CREATE TABLE `tbl_customer` (
+  `customer_id` int(10) NOT NULL,
+  `customer_name` varchar(255) NOT NULL,
+  `customer_email` varchar(255) NOT NULL,
+  `customer_pass` varchar(255) NOT NULL,
+  `customer_country` text NOT NULL,
+  `customer_city` text NOT NULL,
+  `customer_contact` varchar(255) NOT NULL,
+  `customer_address` text NOT NULL,
+  `customer_image` text NOT NULL,
+  `customer_ip` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_customer`
+--
+
+INSERT INTO `tbl_customer` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
+(1, 'test customer 1', 'test1@gmail.com', '123456', 'Germany', 'kiel', '0000000001', 'abcdef str. 1', 'test1.png', '::1'),
+(2, 'test customer 2', 'test2@gmail.com', '789456', 'Germany', 'kiel', '0000000002', 'abcdefgh str 2', 'test2.png', '::1');
 
 -- --------------------------------------------------------
 
@@ -84,6 +103,12 @@ ALTER TABLE `tbl_cart`
   ADD PRIMARY KEY (`p_id`);
 
 --
+-- Indexes for table `tbl_customer`
+--
+ALTER TABLE `tbl_customer`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
 -- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
@@ -92,6 +117,12 @@ ALTER TABLE `tbl_product`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbl_customer`
+--
+ALTER TABLE `tbl_customer`
+  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
