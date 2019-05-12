@@ -91,7 +91,20 @@ if(isset($_GET['pro_id'])){
                        <a href="customer_register.php">Register</a>
                    </li>
                    <li>
-                       <a href="customer/my_account.php">My Account</a>
+                  <?php 
+                           
+                           if(!isset($_SESSION['customer_email'])){
+                               
+                               echo"<a href='checkout.php'>My Account</a>";
+                               
+                           }else{
+                               
+                              echo"<a href='customer/my_account.php?my_orders'>My Account</a>"; 
+                               
+                           }
+                           
+                           ?>
+
                    </li>
                    <li>
                        <a href="cart.php">Go To Cart</a>
