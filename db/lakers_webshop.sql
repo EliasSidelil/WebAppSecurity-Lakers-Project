@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2019 at 10:38 PM
+-- Generation Time: May 13, 2019 at 11:48 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -64,6 +64,32 @@ INSERT INTO `tbl_customer` (`customer_id`, `customer_name`, `customer_email`, `c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_orders`
+--
+
+CREATE TABLE `tbl_orders` (
+  `order_id` int(10) NOT NULL,
+  `customer_id` int(10) NOT NULL,
+  `due_amount` int(100) NOT NULL,
+  `invoice_no` int(100) NOT NULL,
+  `qty` int(10) NOT NULL,
+  `order_date` date NOT NULL,
+  `order_status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_orders`
+--
+
+INSERT INTO `tbl_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `order_date`, `order_status`) VALUES
+(1, 1, 27, 1760399684, 1, '2019-05-13', 'pending'),
+(2, 1, 140, 1760399684, 2, '2019-05-13', 'pending'),
+(3, 1, 70, 1760399684, 1, '2019-05-13', 'pending'),
+(4, 2, 35, 1014140363, 1, '2019-05-13', 'pending');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_product`
 --
 
@@ -109,6 +135,12 @@ ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
+-- Indexes for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
@@ -123,6 +155,12 @@ ALTER TABLE `tbl_product`
 --
 ALTER TABLE `tbl_customer`
   MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
