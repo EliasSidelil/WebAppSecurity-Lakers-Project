@@ -74,8 +74,20 @@ if(isset($_GET['pro_id'])){
                                 echo "Welcome: Guest";
                        
                            }else{
-                       
-                                 echo "Welcome: " . $_SESSION['customer_email'] . "";
+
+                                $customer_session = $_SESSION['customer_email'];
+                                
+                                $get_customer = "select * from tbl_customer where customer_email='$customer_session'";
+                                
+                                $run_customer = mysqli_query($con,$get_customer);
+                                
+                                $row_customer = mysqli_fetch_array($run_customer);
+                                
+                                $customer_name = $row_customer['customer_name'];
+
+                                echo "Welcome: $customer_name";
+                                
+                              //   <!-- echo "Welcome: " . $_SESSION['customer_email'] . ""; -->//
                              }
                    
                            ?>
