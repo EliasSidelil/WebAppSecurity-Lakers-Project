@@ -19,6 +19,7 @@
             <tr><!--  tr Begin  -->
                 
                 <th> ON: </th>
+                <th> Product: </th>
                 <th> Due Amount: </th>
                 <th> Invoice No: </th>
                 <th> Qty: </th>
@@ -53,6 +54,8 @@
             while($row_orders = mysqli_fetch_array($run_orders)){
                 
                 $order_id = $row_orders['order_id'];
+
+                $product_name = $row_orders['product_name'];
                 
                 $due_amount = $row_orders['due_amount'];
                 
@@ -81,7 +84,8 @@
             <tr><!--  tr Begin  -->
                 
                 <th> <?php echo $i; ?> </th>
-                <td> $<?php echo $due_amount; ?> </td>
+                <td> <?php echo $product_name; ?> </td>
+                <td> €<?php echo $due_amount; ?> </td>
                 <td> <?php echo $invoice_no; ?> </td>
                 <td> <?php echo $qty; ?> </td>
                 <td> <?php echo $order_date; ?> </td>
@@ -89,7 +93,7 @@
                 
                 <td>
                     
-                    <a href="confirm.php?order_id='<?php echo $order_id; ?>'" target="_blank" class="btn btn-primary btn-sm"> Confirm Paid </a>
+                    <a href="confirm.php?order_id=<?php echo $order_id; ?>" target="_blank" class="btn btn-primary btn-sm"> Confirm Paid </a>
                     
                 </td>
                 

@@ -25,10 +25,10 @@ $run_cart = mysqli_query($con,$select_cart);
 while($row_cart = mysqli_fetch_array($run_cart)){
     
     $pro_id = $row_cart['p_id'];
+
+    $product_name = $row_cart['product_name'];
     
     $pro_qty = $row_cart['qty'];
-    
-    $pro_size = $row_cart['size'];
     
     $get_products = "select * from tbl_product where product_id='$pro_id'";
     
@@ -38,7 +38,7 @@ while($row_cart = mysqli_fetch_array($run_cart)){
         
         $sub_total = $row_products['product_price']*$pro_qty;
         
-        $insert_customer_order = "insert into tbl_orders (customer_id,due_amount,invoice_no,qty,order_date,order_status) values ('$customer_id','$sub_total','$invoice_no','$pro_qty',NOW(),'$status')";
+        $insert_customer_order = "insert into tbl_orders (customer_id,product_name,due_amount,invoice_no,qty,order_date,order_status) values ('$customer_id','$product_name','$sub_total','$invoice_no','$pro_qty',NOW(),'$status')";
         
         $run_customer_order = mysqli_query($con,$insert_customer_order);
         

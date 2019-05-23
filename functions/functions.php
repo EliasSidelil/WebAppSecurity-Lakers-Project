@@ -1,5 +1,7 @@
 <?php 
 
+
+
 $db = mysqli_connect("localhost","root","","lakers_webshop");
 
 /// begin getRealIpUser functions ///
@@ -29,21 +31,36 @@ function add_cart(){
         $ip_add = getRealIpUser();
         
         $p_id = $_GET['add_cart'];
+
+
+
         
         $product_qty = $_POST['product_qty'];
         
-        $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id'";
+        $check_product = "select * from tbl_cart where ip_add='$ip_add' AND p_id='$p_id'";
         
         $run_check = mysqli_query($db,$check_product);
         
         if(mysqli_num_rows($run_check)>0){
             
             echo "<script>alert('This product has already added in cart')</script>";
+
             echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
             
         }else{
             
-            $query = "insert into tbl_cart (p_id,ip_add,qty) values ('$p_id','$ip_add','$product_qty')";
+
+
+            $get_products = "select * from tbl_product where product_id='$p_id'";
+    
+            $run_products = mysqli_query($db,$get_products);
+    
+            $row_products=mysqli_fetch_array($run_products);
+
+            $pro_title = $row_products['product_title'];
+            
+
+            $query = "insert into tbl_cart (p_id,ip_add,product_name,qty) values ('$p_id','$ip_add','$pro_title','$product_qty')";
             
             $run_query = mysqli_query($db,$query);
             

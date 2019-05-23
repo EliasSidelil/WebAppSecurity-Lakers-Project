@@ -183,7 +183,7 @@ if(isset($_GET['order_id'])){
                    
                    <h1 align="center"> Please confirm your payment</h1>
                    
-                   <form action="confirm.php?update_id='<?php echo $order_id;  ?>'" method="post" enctype="multipart/form-data"><!-- form Begin -->
+                   <form action="confirm.php?update_id=<?php echo $order_id;  ?>" method="post" enctype="multipart/form-data"><!-- form Begin -->
                        
                        <div class="form-group"><!-- form-group Begin -->
                            

@@ -19,8 +19,10 @@
                </ul><!-- breadcrumb Finish -->
                
            </div><!-- col-md-12 Finish -->
+           <div class="col-md-4">
+           </div>
            
-           <div class="col-md-9"><!-- col-md-9 Begin -->
+           <div class="col-md-4"><!-- col-md-9 Begin -->
            
            <?php 
            
