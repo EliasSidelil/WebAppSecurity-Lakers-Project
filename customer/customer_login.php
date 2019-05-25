@@ -46,7 +46,7 @@
       
      <a href="customer_register.php">
          
-         <h3> Dont have account..? Register here </h3>
+         <h3> Don't have account..? Register here </h3>
          
      </a> 
       
