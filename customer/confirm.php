@@ -195,7 +195,7 @@ if(isset($_GET['order_id'])){
                        
                        <div class="form-group"><!-- form-group Begin -->
                            
-                         <label> Amount Sent: </label>
+                         <label> Amount Sent: in € </label>
                           
                           <input type="text" class="form-control" name="amount_sent" required>
                            
@@ -208,10 +208,9 @@ if(isset($_GET['order_id'])){
                           <select name="payment_mode" class="form-control"><!-- form-control Begin -->
                               
                               <option> Select Payment Mode </option>
-                              <option> Back Code </option>
-                              <option> UBL / Omni Paisa </option>
-                              <option> Easy Paisa </option>
-                              <option> Western Union </option>
+                              <option> Direct Debits </option>
+                              <option> Card payments </option>
+                              <option> Post Office Services </option>
                               
                           </select><!-- form-control Finish -->
                            
@@ -227,14 +226,6 @@ if(isset($_GET['order_id'])){
                        
                        <div class="form-group"><!-- form-group Begin -->
                            
-                         <label> Omni Paisa / East Paisa: </label>
-                          
-                          <input type="text" class="form-control" name="code" required>
-                           
-                       </div><!-- form-group Finish -->
-                       
-                       <div class="form-group"><!-- form-group Begin -->
-                           
                          <label> Payment Date: </label>
                           
                           <input type="text" class="form-control" name="date" required>
@@ -243,7 +234,7 @@ if(isset($_GET['order_id'])){
                        
                        <div class="text-center"><!-- text-center Begin -->
                            
-                           <button class="btn btn-primary btn-lg"><!-- tn btn-primary btn-lg Begin -->
+                           <button class="btn btn-primary btn-lg" name="confirm_payment"><!-- tn btn-primary btn-lg Begin -->
                                
                                <i class="fa fa-user-md"></i> Confirm Payment
                                
@@ -252,6 +243,46 @@ if(isset($_GET['order_id'])){
                        </div><!-- text-center Finish -->
                        
                    </form><!-- form Finish -->
+
+                   
+                   <?php 
+                   
+                    if(isset($_POST['confirm_payment'])){
+                        
+                        $update_id = $_GET['update_id'];
+                        
+                        $invoice_no = $_POST['invoice_no'];
+                        
+                        $amount = $_POST['amount_sent'];
+                        
+                        $payment_mode = $_POST['payment_mode'];
+                        
+                        $ref_no = $_POST['ref_no'];
+                        
+                        $payment_date = $_POST['date'];
+                        
+                        $complete = "Complete";
+                        
+                        $insert_payment = "insert into tbl_payments (invoice_no,amount,payment_mode,ref_no,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_no','$payment_date')";
+                        
+                        $run_payment = mysqli_query($con,$insert_payment);
+                        
+                        $update_customer_order = "update tbl_orders set order_status='$complete' where order_id='$update_id'";
+                        
+                        $run_customer_order = mysqli_query($con,$update_customer_order);
+                        
+                        if($run_customer_order){
+                            
+                            echo "<script>alert('Thank You for purchasing, your orders will be completed within 24 working hours')</script>";
+                            
+                            echo "<script>window.open('my_account.php?my_orders','_self')</script>";
+                            
+                        }
+                        
+                    }
+                   
+                   ?>
+
                    
                </div><!-- box Finish -->
                
