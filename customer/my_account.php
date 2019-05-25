@@ -185,7 +185,9 @@ include("functions/functions.php");
                    <?php
                    
                    if (isset($_GET['pay_offline'])){
-                       include("pay_offline.php");
+                      echo "<script>window.open('../checkout.php','_self')</script>";
+                      
+                       /*include("pay_offline.php");*/
                    }
                    
                    ?>

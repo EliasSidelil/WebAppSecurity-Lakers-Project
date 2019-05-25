@@ -26,11 +26,11 @@
          
         <p class="lead"><!-- lead Begin -->
             
-            <a href="#">
+            <a href="payment_method.php">
                 
                 Select your Payment method
                 
-                <img class="img-responsive" src="images/payment-method-3.png" alt="img-pay">
+                <!-- <img class="img-responsive" src="images/payment-method-3.png" alt="img-pay"> -->
                 
             </a>
             

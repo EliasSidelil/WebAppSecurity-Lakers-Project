@@ -1,8 +1,9 @@
 <center><!--  center Begin  -->
     
-    <h1> My Orders </h1>
+    <h2> Your Order(s) </h2>
     
-    <p class="lead"> Your orders on one place</p>
+    <p class="lead"> Review Your orders on one place</p>
+    <p> If you want to change the delivery address, please select "Edit Account" from the left panel.</p>
     
 </center><!--  center Finish  -->
 
