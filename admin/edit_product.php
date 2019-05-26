@@ -8,12 +8,44 @@
 
 ?>
 
+<?php 
+
+    if(isset($_GET['edit_product'])){
+        
+        $edit_id = $_GET['edit_product'];
+        
+        $get_p = "select * from tbl_product where product_id='$edit_id'";
+        
+        $run_edit = mysqli_query($con,$get_p);
+        
+        $row_edit = mysqli_fetch_array($run_edit);
+        
+        $p_id = $row_edit['product_id'];
+        
+        $p_title = $row_edit['product_title'];
+        
+        $p_image1 = $row_edit['product_img1'];
+        
+        $p_image2 = $row_edit['product_img2'];
+        
+        $p_image3 = $row_edit['product_img3'];
+        
+        $p_price = $row_edit['product_price'];
+        
+        $p_stock = $row_edit['stock'];
+        
+        $p_desc = $row_edit['product_desc'];
+        
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Insert Products </title>
+    <title> Edit Products </title>
 </head>
 <body>
     
@@ -25,7 +57,7 @@
             
             <li class="active"><!-- active Begin -->
                 
-                <i class="fa fa-dashboard"></i> Dashboard / Insert Products
+                <i class="fa fa-dashboard"></i> Dashboard / Edit Products
                 
             </li><!-- active Finish -->
             
@@ -41,15 +73,15 @@
         
         <div class="panel panel-default"><!-- panel panel-default Begin -->
             
-           <div class="panel-heading"><!-- panel panel-default Begin -->
+           <div class="panel-heading"><!-- panel-heading Begin -->
                
                <h3 class="panel-title"><!-- panel-title Begin -->
                    
-                   <i class="fa fa-money fa-fw"></i> Insert Product 
+                   <i class="fa fa-money fa-fw"></i> Edit Product 
                    
                </h3><!-- panel-title Finish -->
                
-           </div> <!-- canel panel-default Finish -->
+           </div> <!-- panel-heading Finish -->
            
            <div class="panel-body"><!-- panel-body Begin -->
                
@@ -57,11 +89,11 @@
                    
                    <div class="form-group"><!-- form-group Begin -->
                        
-                      <label class="col-md-3 control-label"> Product Name </label> 
+                      <label class="col-md-3 control-label"> Product Title </label> 
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_title" type="text" class="form-control" required>
+                          <input name="product_title" type="text" class="form-control" required value="<?php echo $p_title; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -75,6 +107,10 @@
                           
                           <input name="product_img1" type="file" class="form-control" required>
                           
+                          <br>
+                          
+                          <img width="70" height="70" src="product_images/<?php echo $p_image1; ?>" alt="<?php echo $p_image1; ?>">
+                          
                       </div><!-- col-md-6 Finish -->
                        
                    </div><!-- form-group Finish -->
@@ -86,6 +122,10 @@
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
                           <input name="product_img2" type="file" class="form-control">
+                          
+                          <br>
+                          
+                          <img width="70" height="70" src="product_images/<?php echo $p_image2; ?>" alt="<?php echo $p_image2; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -99,6 +139,10 @@
                           
                           <input name="product_img3" type="file" class="form-control form-height-custom">
                           
+                          <br>
+                          
+                          <img width="70" height="70" src="product_images/<?php echo $p_image3; ?>" alt="<?php echo $p_image3; ?>">
+                          
                       </div><!-- col-md-6 Finish -->
                        
                    </div><!-- form-group Finish -->
@@ -109,7 +153,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="product_price" type="text" class="form-control" required>
+                          <input name="product_price" type="text" class="form-control" required value="<?php echo $p_price; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -121,7 +165,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="stock" type="text" class="form-control" required>
+                          <input name="stock" type="text" class="form-control" required value="<?php echo $p_stock; ?>">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -133,7 +177,11 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <textarea name="product_desc" cols="19" rows="6" class="form-control"></textarea>
+                          <textarea name="product_desc" cols="19" rows="6" class="form-control">
+                              
+                              <?php echo $p_desc; ?>
+                              
+                          </textarea>
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -145,7 +193,7 @@
                       
                       <div class="col-md-6"><!-- col-md-6 Begin -->
                           
-                          <input name="submit" value="Insert Product" type="submit" class="btn btn-primary form-control">
+                          <input name="update" value="Update Product" type="submit" class="btn btn-primary form-control">
                           
                       </div><!-- col-md-6 Finish -->
                        
@@ -164,13 +212,14 @@
 </body>
 </html>
 
+
 <?php 
 
-if(isset($_POST['submit'])){
+if(isset($_POST['update'])){
     
     $product_title = $_POST['product_title'];
     $product_price = $_POST['product_price'];
-    $stock = $_POST['stock'];
+    $product_stock = $_POST['stock'];
     $product_desc = $_POST['product_desc'];
     
     $product_img1 = $_FILES['product_img1']['name'];
@@ -185,19 +234,21 @@ if(isset($_POST['submit'])){
     move_uploaded_file($temp_name2,"product_images/$product_img2");
     move_uploaded_file($temp_name3,"product_images/$product_img3");
     
-    $insert_product = "insert into tbl_product (product_title,product_img1,product_img2,product_img3,product_price,stock,product_desc) values ('$product_title','$product_img1','$product_img2','$product_img3','$product_price','$stock','$product_desc')";
+    $update_product = "update tbl_product set product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',stock='$product_stock',product_desc='$product_desc' where product_id='$p_id'";
     
-    $run_product = mysqli_query($con,$insert_product);
+    $run_product = mysqli_query($con,$update_product);
     
     if($run_product){
         
-        echo "<script>alert('Product has been inserted sucessfully')</script>";
-        echo "<script>window.open('index.php?view_products','_self')</script>";
+       echo "<script>alert('Your product has been updated Successfully')</script>"; 
+        
+       echo "<script>window.open('index.php?view_products','_self')</script>"; 
         
     }
     
 }
 
 ?>
+
 
 <?php } ?>
