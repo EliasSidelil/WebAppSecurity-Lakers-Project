@@ -98,7 +98,7 @@
                                
                                <label>Your Profile picture</label>
                                
-                               <input type="file" class="form-control" name="c_image" required>
+                               <input type="file" class="form-control" name="c_image">
                                
                            </div><!-- form-group Finish -->
                            
