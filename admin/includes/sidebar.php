@@ -129,28 +129,6 @@
             </li><!-- li finish -->
             
             <li><!-- li begin -->
-                <a href="#" data-toggle="collapse" data-target="#users"><!-- a href begin -->
-                        
-                        <i class="fa fa-fw fa-users"></i> Users
-                        <i class="fa fa-fw fa-caret-down"></i>
-                        
-                </a><!-- a href finish -->
-                
-                <ul id="users" class="collapse"><!-- collapse begin -->
-                    <li><!-- li begin -->
-                        <a href="index.php?insert_user"> Insert User </a>
-                    </li><!-- li finish -->
-                    <li><!-- li begin -->
-                        <a href="index.php?view_users"> View Users </a>
-                    </li><!-- li finish -->
-                    <li><!-- li begin -->
-                        <a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit User Profile </a>
-                    </li><!-- li finish -->
-                </ul><!-- collapse finish -->
-                
-            </li><!-- li finish -->
-            
-            <li><!-- li begin -->
                 <a href="logout.php"><!-- a href begin -->
                     <i class="fa fa-fw fa-power-off"></i> Log Out
                 </a><!-- a href finish -->

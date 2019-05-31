@@ -18,18 +18,19 @@
                        Details
                    </li>
                </ul><!-- breadcrumb Finish -->
+
+           </div><!-- col-md-12 Finish -->
                
-                <div class="col-md-12"><!-- col-md-9 Begin -->
+            <div class="col-md-12"><!-- col-md-9 Begin -->
 
-               <div id="productMain" class="row"><!-- row Begin -->
-                   <div class="col-sm-6"><!-- col-sm-6 Begin -->
+              <div id="productMain" class="row"><!-- row Begin -->
+
+                <div class="col-sm-6"><!-- col-sm-6 Begin -->
                     
-                            
-                       <div id="mainImage"><!-- #mainImage Begin -->
+                  <div id="mainImage"><!-- #mainImage Begin -->
 
-                           <div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel slide Begin -->
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel"><!-- carousel slide Begin -->
                              
-
                                <ol class="carousel-indicators"><!-- carousel-indicators Begin -->
                                    <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
                                    <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -64,15 +65,13 @@
                    
                    <div class="col-sm-6"><!-- col-sm-6 Begin -->
                        <div class="box"><!-- box Begin -->
-                           
-                          <h1 class="text-center"> <?php echo $pro_title; ?> </h1>
-                          
+
                            <?php add_cart(); ?>
                            
                            <form action="details.php?add_cart=<?php echo $product_id; ?>" class="form-horizontal" method="post"><!-- form-horizontal Begin -->
                                <div class="form-group"><!-- form-group Begin -->
 
-                                  
+                                  <h1 class="text-center"> <?php echo $pro_title; ?> </h1>
 
                                    <label for="" class="col-md-5 control-label">Products Quantity</label>
                                    
@@ -121,8 +120,6 @@
                
                
            </div><!-- col-md-9 Finish -->
-
-           </div><!-- col-md-12 Finish -->
            
            
            

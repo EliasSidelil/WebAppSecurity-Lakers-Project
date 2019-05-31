@@ -14,28 +14,28 @@
     
     ?>
     
-    <h1 class="text-center">Payment Options For You</h1>  
+    <h1 class="text-center">Payment Options For You</h1>
+     
+     <center><!-- center Begin -->
+         
+        <p class="lead"><!-- lead Begin -->
+            
+            <a href="#">
+                
+                Select your Payment method
+                
+                <img class="img-responsive" src="images/payment-method-3.png" alt="img-pay">
+                
+            </a>
+            
+        </p> <!-- lead Finish -->
+         
+     </center><!-- center Finish -->  
     
      <p class="lead text-center"><!-- lead text-center Begin -->
          
          <a class="" href="order.php?c_id=<?php echo $customer_id ?>"> Offline Payment </a>
          
      </p><!-- lead text-center Finish -->
-     
-     <center><!-- center Begin -->
-         
-        <p class="lead"><!-- lead Begin -->
-            
-            <a href="payment_method.php">
-                
-                Select your Payment method
-                
-                <!-- <img class="img-responsive" src="images/payment-method-3.png" alt="img-pay"> -->
-                
-            </a>
-            
-        </p> <!-- lead Finish -->
-         
-     </center><!-- center Finish -->
     
 </div><!-- box Finish -->

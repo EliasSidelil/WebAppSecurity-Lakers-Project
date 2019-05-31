@@ -80,7 +80,7 @@
                            
                            <div class="form-group"><!-- form-group Begin -->
                                
-                               <label>Contact</label>
+                               <label>Post Code</label>
                                
                                <input type="text" class="form-control" name="c_contact" required>
                                
@@ -88,7 +88,7 @@
                            
                            <div class="form-group"><!-- form-group Begin -->
                                
-                               <label>Address</label>
+                               <label>Address/Str.</label>
                                
                                <input type="text" class="form-control" name="c_address" required>
                                
@@ -174,7 +174,7 @@ if(isset($_POST['register'])){
         
         echo "<script>alert('You have been Registered Sucessfully')</script>";
         
-        echo "<script>window.open('checkout.php','_self')</script>";
+        echo "<script>window.open('delivery_address.php','_self')</script>";
         
     }else{
         
