@@ -65,7 +65,10 @@
                             <?php echo $customer_address; ?></br>
                             <?php echo $customer_contact; ?>
                             <?php echo $customer_city; ?></br>
-                            <?php echo $customer_country; ?>
+                            <?php echo $customer_country; ?></br>
+                            <a class="" href="#"> Change </a>
+
+                            <hr>    
                            
                            <h3>Choose a delivery option:</h3>
 

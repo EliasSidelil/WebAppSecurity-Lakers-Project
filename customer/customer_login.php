@@ -59,11 +59,11 @@
 
 if(isset($_POST['login'])){
     
-    $customer_email = $_POST['c_email'];
+    $customer_email = mysqli_real_escape_string($con, $_POST['c_email']); //$_POST['c_email'];
     
-    $customer_pass = $_POST['c_pass'];
+    $customer_pass = mysqli_real_escape_string($con, $_POST['c_pass']); //$_POST['c_pass'];
     
-    $select_customer = "select * from tbl_customer where customer_email='$customer_email' AND customer_pass='$customer_pass'";
+    $select_customer = "select * from tbl_customer where customer_email='$customer_email'";
     
     $run_customer = mysqli_query($con,$select_customer);
     
@@ -83,26 +83,41 @@ if(isset($_POST['login'])){
         
         exit();
         
-    }
+    } else{
     
-    if($check_customer==1 AND $check_cart==0){
+        if($row = mysqli_fetch_assoc($run_customer)){
         
-        $_SESSION['customer_email']=$customer_email;
+          //De-hashing the password
+          $hashedpwdcheck = password_verify($customer_pass, $row['customer_pass']);
+
+          if ($hashedpwdcheck == false) {
+            echo "<script>alert('Your email or password is wrong')</script>";
         
-       echo "<script>alert('You are Logged in')</script>"; 
+          exit();
+          } elseif ($hashedpwdcheck == true) {
+            //Login the user here
+              
+              if ($check_cart==0) {
+                
+                  $_SESSION['customer_email']=$customer_email;
+            
+                  echo "<script>alert('You are Logged in')</script>"; 
+            
+                  echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
         
-       echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
+              }else{
         
-    }else{
+                  $_SESSION['customer_email']=$customer_email;
         
-        $_SESSION['customer_email']=$customer_email;
+                  echo "<script>alert('You are Logged in')</script>"; 
         
-       echo "<script>alert('You are Logged in')</script>"; 
+                  echo "<script>window.open('checkout.php','_self')</script>";
         
-       echo "<script>window.open('checkout.php','_self')</script>";
-        
+                  }
+
+            }
     }
-    
+  }
 }
 
 ?>

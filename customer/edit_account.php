@@ -32,7 +32,7 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer Name: </label>
+        <label> Customer Name: </label>
         
         <input type="text" name="c_name" class="form-control" value="<?php echo $customer_name; ?>" required>
         
@@ -40,7 +40,7 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer Email: </label>
+        <label> Customer Email: </label>
         
         <input type="text" name="c_email" class="form-control" value="<?php echo $customer_email; ?>" required>
         
@@ -48,7 +48,7 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer Country: </label>
+        <label> Customer Country: </label>
         
         <input type="text" name="c_country" class="form-control" value="<?php echo $customer_country; ?>" required>
         
@@ -56,7 +56,7 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer City: </label>
+        <label> Customer City: </label>
         
         <input type="text" name="c_city" class="form-control" value="<?php echo $customer_city; ?>" required>
         
@@ -64,7 +64,7 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer Contact: </label>
+        <label> Customer Contact: </label>
         
         <input type="text" name="c_contact" class="form-control" value="<?php echo $customer_contact; ?>" required>
         
@@ -72,7 +72,7 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer Address: </label>
+        <label> Customer Address: </label>
         
         <input type="text" name="c_address" class="form-control" value="<?php echo $customer_address; ?>" required>
         
@@ -80,7 +80,7 @@ $customer_image = $row_customer['customer_image'];
     
     <div class="form-group"><!-- form-group Begin -->
         
-        <label> Costumer Image: </label>
+        <label> Customer Image: </label>
         
         <input type="file" name="c_image" class="form-control form-height-custom">
         

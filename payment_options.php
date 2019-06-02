@@ -16,7 +16,7 @@
     
     <h1 class="text-center">Payment Options For You</h1>
      
-     <center><!-- center Begin -->
+     
          
         <p class="lead"><!-- lead Begin -->
             
@@ -30,9 +30,9 @@
             
         </p> <!-- lead Finish -->
          
-     </center><!-- center Finish -->  
+       
     
-     <p class="lead text-center"><!-- lead text-center Begin -->
+     <p class="lead"><!-- lead text-center Begin -->
          
          <a class="" href="order.php?c_id=<?php echo $customer_id ?>"> Offline Payment </a>
          

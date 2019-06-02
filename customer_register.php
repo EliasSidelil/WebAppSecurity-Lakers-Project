@@ -35,7 +35,7 @@
                          
                        </center><!-- center Finish -->
                        
-                       <form action="customer_register.php" method="post" enctype="multipart/form-data"><!-- form Begin -->
+                       <form action="signup.php" method="post" enctype="multipart/form-data"><!-- form Begin -->
                            
                            <div class="form-group"><!-- form-group Begin -->
                                
