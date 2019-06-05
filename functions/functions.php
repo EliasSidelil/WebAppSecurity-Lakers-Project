@@ -20,7 +20,7 @@ function getRealIpUser(){
     
 }
 
-/// begin add_cart functions - To add products to Cart from details ///
+/// begin add_cart functions -- To add products to Cart from details ///
 
 function add_cart(){
     

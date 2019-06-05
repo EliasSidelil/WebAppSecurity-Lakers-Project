@@ -11,6 +11,8 @@ if(!isset($_SESSION['customer_email'])){
 include("includes/db.php");
 include("functions/functions.php");
 
+require_once 'includes/Token.php';
+
 if(isset($_GET['order_id'])){
     
     $order_id = $_GET['order_id'];
@@ -239,6 +241,8 @@ if(isset($_GET['order_id'])){
                                <i class="fa fa-user-md"></i> Confirm Payment
                                
                            </button><!-- tn btn-primary btn-lg Finish -->
+
+                           <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
                            
                        </div><!-- text-center Finish -->
                        
@@ -247,7 +251,7 @@ if(isset($_GET['order_id'])){
                    
                    <?php 
                    
-                    if(isset($_POST['confirm_payment'])){
+                    if(isset($_POST['confirm_payment'], $_POST['token'])){
                         
                         $update_id = $_GET['update_id'];
                         
@@ -262,6 +266,8 @@ if(isset($_GET['order_id'])){
                         $payment_date = $_POST['date'];
                         
                         $complete = "Complete";
+
+                        $token = new Token();
                         
                         $insert_payment = "insert into tbl_payments (invoice_no,amount,payment_mode,ref_no,payment_date) values ('$invoice_no','$amount','$payment_mode','$ref_no','$payment_date')";
                         
@@ -272,11 +278,16 @@ if(isset($_GET['order_id'])){
                         $run_customer_order = mysqli_query($con,$update_customer_order);
                         
                         if($run_customer_order){
+
+                          if (Token::check($_POST['token'])) {
                             
                             echo "<script>alert('Thank You for purchasing, your orders will be completed within 24 working hours')</script>";
                             
                             echo "<script>window.open('my_account.php?my_orders','_self')</script>";
-                            
+
+                          }
+
+                          echo "<script>alert('No no no no')</script>";  
                         }
                         
                     }
@@ -293,7 +304,8 @@ if(isset($_GET['order_id'])){
   <script src="js/jquery-331.min.js"></script>
   <script src="js/bootstrap-337.min.js"></script>
     
-    
+
 </body>
 </html>
 <?php } ?>
+
