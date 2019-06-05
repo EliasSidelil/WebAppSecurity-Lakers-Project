@@ -30,6 +30,8 @@ if(isset($_GET['pro_id'])){
     $pro_img2 = $row_product['product_img2'];
     
     $pro_img3 = $row_product['product_img3'];
+
+    $pro_stock = $row_product['stock'];
   
 }
 

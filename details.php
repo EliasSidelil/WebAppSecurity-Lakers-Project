@@ -73,15 +73,47 @@
 
                                   <h1 class="text-center"> <?php echo $pro_title; ?> </h1>
 
-                                   <label for="" class="col-md-5 control-label">Products Quantity</label>
+                                   <h3 class="text-center"> In Stock: <?php echo $pro_stock;?></h3>
+
+                                 
+
+                                   <label for="" class="col-md-5 control-label">Quantity</label>
                                    
                                    <div class="col-md-7"><!-- col-md-7 Begin -->
                                           <select name="product_qty" id="" class="form-control"><!-- select Begin -->
-                                           <option>1</option>
+                                           <!-- <option>1</option>
                                            <option>2</option>
                                            <option>3</option>
                                            <option>4</option>
-                                           <option>5</option>
+                                           <option>5</option> -->
+                                           <?php 
+
+                                           if ($pro_stock < 1) {
+                                             
+                                             echo "<script>alert('We are very Sorry, This item is not available in our stock.')</script>";
+
+                                             echo "<script>window.open('index.php','_self')</script>";
+                                           }else{
+
+                                           $i = 1;
+
+                                            while ($i <= $pro_stock) {
+
+                                              ?>
+
+                                               
+                                              <option><?php echo $i;?></option>
+                                                 
+                                              <?php 
+
+                                              $i++;
+                                            }
+
+                                            }
+                                           
+                                           ?>
+                                           
+
                                            </select><!-- select Finish -->
                                    
                                     </div><!-- col-md-7 Finish -->

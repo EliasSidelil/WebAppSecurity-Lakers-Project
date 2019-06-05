@@ -59,6 +59,14 @@ function add_cart(){
 
             $pro_title = $row_products['product_title'];
             
+            $pro_stock = $row_products['stock'];
+
+            if ($pro_stock < 1) {
+
+                echo "<script>alert('We are very Sorry, you have requested $product_qty $pro_title but we have only $pro_stock of this item in stock.')</script>";
+
+                echo "<script>window.open('index.php','_self')</script>";
+            }else{
 
             $query = "insert into tbl_cart (p_id,ip_add,product_name,qty) values ('$p_id','$ip_add','$pro_title','$product_qty')";
             
@@ -67,6 +75,7 @@ function add_cart(){
             echo "<script>alert('An item has been added to your cart')</script>";
 
             echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
+            }
             
         }
         
