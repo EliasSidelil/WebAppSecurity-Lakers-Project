@@ -37,16 +37,24 @@ while($row_cart = mysqli_fetch_array($run_cart)){
     while($row_products = mysqli_fetch_array($run_products)){
         
         $sub_total = $row_products['product_price']*$pro_qty;
+
+        $new_stock = $row_products['stock']-$pro_qty;
         
         $insert_customer_order = "insert into tbl_orders (customer_id,product_name,due_amount,invoice_no,qty,order_date,order_status) values ('$customer_id','$product_name','$sub_total','$invoice_no','$pro_qty',NOW(),'$status')";
         
         $run_customer_order = mysqli_query($con,$insert_customer_order);
+
+
+        $update_stock = "update tbl_product set stock='$new_stock' where product_id='$pro_id' ";
+    
+        $run_stock = mysqli_query($con,$update_stock);
+
         
         $delete_cart = "delete from tbl_cart where ip_add='$ip_add'";
         
         $run_delete = mysqli_query($con,$delete_cart);
         
-        echo "<script>alert('Your orders has been submitted, Thanks')</script>";
+        echo "<script>alert('Your orders has been submitted successfully.')</script>";
         
         echo "<script>window.open('customer/my_account.php?my_orders','_self')</script>";
         

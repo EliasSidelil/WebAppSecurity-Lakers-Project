@@ -211,7 +211,7 @@ if(isset($_GET['order_id'])){
                               
                               <option> Select Payment Mode </option>
                               <option> Direct Debits </option>
-                              <option> Card payments </option>
+                              <option> Bank Transfer</option>
                               <option> Post Office Services </option>
                               
                           </select><!-- form-control Finish -->
