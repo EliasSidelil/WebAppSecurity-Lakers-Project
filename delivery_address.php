@@ -65,15 +65,14 @@
                             <?php echo $customer_address; ?></br>
                             <?php echo $customer_contact; ?>
                             <?php echo $customer_city; ?></br>
-                            <?php echo $customer_country; ?></br>
-                            <a class="" href="#"> Change </a>
+                            <?php echo $customer_country; ?></br></br>
+                            <a class="" href="change_delivery_address.php"> Change </a>
 
                             <hr>    
                            
-                           <h3>Choose a delivery option:</h3>
+                           <h3>Choose a Shipping Method:</h3>
 
                                            <select name="" id="" class="form-control"><!-- select Begin -->
-                                           <option>Choose a delivery option:</option>
                                            <option>Standard Shipping</option>
                                            <option>Premium Shipping</option>
                                            </select><!-- select Finish -->

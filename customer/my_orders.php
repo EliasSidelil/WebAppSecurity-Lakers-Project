@@ -3,7 +3,7 @@
     <h2> Your Order(s) </h2>
     
     <p class="lead"> Review Your orders on one place</p>
-    <p> If you want to change the delivery address, please select "Edit Account" from the left panel.</p>
+    
     
 </center><!--  center Finish  -->
 
@@ -19,7 +19,7 @@
             
             <tr><!--  tr Begin  -->
                 
-                <th> ON: </th>
+                <th> NO: </th>
                 <th> Product: </th>
                 <th> Due Amount: </th>
                 <th> Invoice No: </th>

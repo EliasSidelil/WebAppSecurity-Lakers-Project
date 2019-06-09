@@ -172,7 +172,7 @@ if(isset($_POST['register'])){
         
         $_SESSION['customer_email']=$c_email;
         
-        echo "<script>alert('You have been Registered Sucessfully')</script>";
+        echo "<script>alert('You have been Registered Sucessfully')</script>";  
         
         echo "<script>window.open('delivery_address.php','_self')</script>";
         
