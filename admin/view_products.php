@@ -105,24 +105,7 @@
                                      ?> 
 
                                 </td>
-                                <td> <?php 
-
-                                        if ($quantity == 0) {
-                                            
-                                            echo $stock;
-
-                                        } else {
-
-                                            $stock_now = $stock - $sold_quantity; 
-
-                                            echo $stock_now;
-
-                                        }
-
-                                         
-
-                                     ?>
-                                 </td>
+                                <td> <?php echo $stock; ?></td>
                                 <td> 
                                      
                                      <a href="index.php?delete_product=<?php echo $pro_id; ?>">
