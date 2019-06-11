@@ -105,15 +105,15 @@ if(isset($_POST['update'])){
     
     $update_id = $customer_id;
     
-    $c_name = $_POST['c_name'];
+    $c_name = mysqli_real_escape_string($con, $_POST['c_name']);
     
-    $c_country = $_POST['c_country'];
+    $c_country = mysqli_real_escape_string($con, $_POST['c_country']);
     
-    $c_city = $_POST['c_city'];
+    $c_city = mysqli_real_escape_string($con, $_POST['c_city']);
     
-    $c_address = $_POST['c_address'];
+    $c_address = mysqli_real_escape_string($con, $_POST['c_address']);
     
-    $c_contact = $_POST['c_contact'];
+    $c_contact = mysqli_real_escape_string($con, $_POST['c_contact']);
     
     $update_customer = "update tbl_customer set customer_name='$c_name',customer_country='$c_country',customer_city='$c_city',customer_address='$c_address',customer_contact='$c_contact' where customer_id='$update_id' ";
     

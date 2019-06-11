@@ -77,6 +77,12 @@ if(isset($_GET['pro_id'])){
                        
                            }else{
 
+                                if ((time() - $_SESSION['last_time']) > 1800) {
+
+                                   include("session_logout.php");
+
+                                 }else{
+
                                 $customer_session = $_SESSION['customer_email'];
                                 
                                 $get_customer = "select * from tbl_customer where customer_email='$customer_session'";
@@ -90,6 +96,8 @@ if(isset($_GET['pro_id'])){
                                 echo "Welcome: $customer_name";
                                 
                               //   <!-- echo "Welcome: " . $_SESSION['customer_email'] . ""; -->//
+
+                                }
                              }
                    
                            ?>

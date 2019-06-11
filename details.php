@@ -81,11 +81,7 @@
                                    
                                    <div class="col-md-7"><!-- col-md-7 Begin -->
                                           <select name="product_qty" id="" class="form-control"><!-- select Begin -->
-                                           <!-- <option>1</option>
-                                           <option>2</option>
-                                           <option>3</option>
-                                           <option>4</option>
-                                           <option>5</option> -->
+                                           
                                            <?php 
 
                                            if ($pro_stock < 1) {

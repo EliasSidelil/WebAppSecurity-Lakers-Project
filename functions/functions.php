@@ -67,7 +67,10 @@ function add_cart(){
 
                 echo "<script>window.open('index.php','_self')</script>";
             }else{
-
+                
+                if ($product_qty < $pro_stock) {
+                 
+                
             $query = "insert into tbl_cart (p_id,ip_add,product_name,qty) values ('$p_id','$ip_add','$pro_title','$product_qty')";
             
             $run_query = mysqli_query($db,$query);
@@ -75,6 +78,8 @@ function add_cart(){
             echo "<script>alert('An item has been added to your cart')</script>";
 
             echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
+
+            }
             }
             
         }

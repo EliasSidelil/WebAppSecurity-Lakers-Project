@@ -72,7 +72,7 @@
                            
                            <h3>Choose a Shipping Method:</h3>
 
-                                           <select name="" id="" class="form-control"><!-- select Begin -->
+                                           <select name="shipping" id="" class="form-control"><!-- select Begin -->
                                            <option>Standard Shipping</option>
                                            <option>Premium Shipping</option>
                                            </select><!-- select Finish -->

@@ -22,7 +22,7 @@
                 <th> NO: </th>
                 <th> Product: </th>
                 <th> Due Amount: </th>
-                <th> Invoice No: </th>
+                <th> Order No: </th>
                 <th> Qty: </th>
                 <th> Order Date:</th>
                 <th> Paid / Unpaid: </th>

@@ -59,9 +59,11 @@
 
 if(isset($_POST['login'])){
     
-    $customer_email = mysqli_real_escape_string($con, $_POST['c_email']); //$_POST['c_email'];
+    $customer_email = mysqli_real_escape_string($con, $_POST['c_email']); 
     
-    $customer_pass = mysqli_real_escape_string($con, $_POST['c_pass']); //$_POST['c_pass'];
+    $customer_pass = mysqli_real_escape_string($con, $_POST['c_pass']); 
+
+    $_SESSION['last_time'] = time();
     
     $select_customer = "select * from tbl_customer where customer_email='$customer_email'";
     

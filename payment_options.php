@@ -30,18 +30,17 @@
         <?php echo $customer_address; ?></br>
         <?php echo $customer_contact; ?>
         <?php echo $customer_city; ?></br>
-        <?php echo $customer_country; ?></br></br>
+        <?php echo $customer_country; ?></br>
         <a class="" href="change_delivery_address.php"> Change </a>
 
     <hr>
 
     <h3>Choose a Shipping Method:</h3>
 
-         <select name="" id="" class="form-control"><!-- select Begin -->
+         <select name="shipping" id="" class="form-control"><!-- select Begin -->
          <option>Standard Shipping</option>
          <option>Premium Shipping</option>
          </select><!-- select Finish -->
-    
     <hr>
     <h3>Payment Options For You</h3>
     <hr>
@@ -108,7 +107,7 @@
          
      <div class="navbar-collapse collapse" id="navigation"><!-- navbar-collapse collapse Begin -->
                
-        <a href="order.php?c_id=<?php echo $customer_id ?>" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
+        <a href="review_order.php" class="btn navbar-btn btn-primary right"><!-- btn navbar-btn btn-primary Begin -->
                                    
             <i class="fa fa-confirm"></i>
                                    

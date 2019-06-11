@@ -58,6 +58,12 @@ if(isset($_GET['order_id'])){
                        
                            }else{
 
+                                if ((time() - $_SESSION['last_time']) > 1800) {
+
+                                   include("session_logout.php");
+
+                                 }else{
+
                                 $customer_session = $_SESSION['customer_email'];
                                 
                                 $get_customer = "select * from tbl_customer where customer_email='$customer_session'";
@@ -69,8 +75,7 @@ if(isset($_GET['order_id'])){
                                 $customer_name = $row_customer['customer_name'];
 
                                 echo "Welcome: $customer_name";
-
-                              //   <!-- echo "Welcome: " . $_SESSION['customer_email'] . ""; -->//
+                              }
                              }
                    
                            ?>
@@ -189,7 +194,7 @@ if(isset($_GET['order_id'])){
                        
                        <div class="form-group"><!-- form-group Begin -->
                            
-                         <label> Invoice No: </label>
+                         <label> Order No: </label>
                           
                           <input type="text" class="form-control" name="invoice_no" required>
                            
@@ -255,15 +260,15 @@ if(isset($_GET['order_id'])){
                         
                         $update_id = $_GET['update_id'];
                         
-                        $invoice_no = $_POST['invoice_no'];
+                        $invoice_no = mysqli_real_escape_string($con, $_POST['invoice_no']);
                         
-                        $amount = $_POST['amount_sent'];
+                        $amount = mysqli_real_escape_string($con, $_POST['amount_sent']);
                         
-                        $payment_mode = $_POST['payment_mode'];
+                        $payment_mode = mysqli_real_escape_string($con, $_POST['payment_mode']);
                         
-                        $ref_no = $_POST['ref_no'];
+                        $ref_no = mysqli_real_escape_string($con, $_POST['ref_no']);
                         
-                        $payment_date = $_POST['date'];
+                        $payment_date = mysqli_real_escape_string($con, $_POST['date']);
                         
                         $complete = "Complete";
 
