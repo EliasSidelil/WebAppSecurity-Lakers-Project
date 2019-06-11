@@ -100,7 +100,6 @@
             <a href="#">
                 
                 Offline Payment:
-
             </a>
             
         </p> <!-- lead Finish -->

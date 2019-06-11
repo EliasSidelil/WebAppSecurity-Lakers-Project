@@ -134,8 +134,9 @@
                        <h3>Product Details</h3>
                    
                    <p>
-                       
                        <?php echo $pro_desc; ?>
+                       <p><?php print_r($_COOKIE); ?></p>
+                      <p><?php print_r($_SESSION); ?></p>
                        
                    </p>
                   
