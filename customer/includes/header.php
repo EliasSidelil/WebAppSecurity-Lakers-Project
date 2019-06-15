@@ -71,7 +71,7 @@ if(isset($_GET['pro_id'])){
                        
                            }else{
 
-                                if ((time() - $_SESSION['last_time']) > 1800) {
+                                if ((time() - $_SESSION['last_time']) > 3600) {
 
                                    include("session_logout.php");
 

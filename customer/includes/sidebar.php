@@ -74,7 +74,7 @@
                 
                 <a href="my_account.php?change_pass">
                     
-                    <i class="fa fa-user"></i> Change Password
+                    <i class="fa fa-user"></i> Change Password 
                     
                 </a>
                 

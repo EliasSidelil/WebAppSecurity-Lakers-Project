@@ -1,4 +1,5 @@
  <!-- Generate hidden token -->
+ <!-- To handle CSRF -->
  
 <?php
 
@@ -17,3 +18,7 @@ class Token
 	}
 	
 }
+
+
+
+

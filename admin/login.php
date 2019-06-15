@@ -48,25 +48,45 @@
         
         $admin_pass = mysqli_real_escape_string($con,$_POST['admin_pass']);
         
-        $get_admin = "select * from tbl_admin where admin_email='$admin_email' AND admin_pass='$admin_pass'";
+        $get_admin = "select * from tbl_admin where admin_email='$admin_email'";
         
         $run_admin = mysqli_query($con,$get_admin);
         
         $count = mysqli_num_rows($run_admin);
+
+
+        if($count==0){
         
-        if($count==1){
+        echo "<script>alert('Your email or password is wrong1')</script>";
+        
+        exit();
+        
+    } else{
+    
+        if($row = mysqli_fetch_assoc($run_admin)){
+        
+          //De-hashing the password
+          $hashedpwdcheck = password_verify($admin_pass, $row['admin_pass']);
+
+          if ($hashedpwdcheck == false) {
+            echo "<script>alert('Your email or password is wrong2')</script>";
+        
+          exit();
+          } elseif ($hashedpwdcheck == true) {
+            //Login the user here
+              
+              $_SESSION['admin_email']=$admin_email;
             
-            $_SESSION['admin_email']=$admin_email;
-            
-            echo "<script>alert('Logged in. Welcome Back')</script>";
+            echo "<script>alert('Welcome Admin')</script>";
             
             echo "<script>window.open('index.php?dashboard','_self')</script>";
-            
-        }else{
-            
-            echo "<script>alert('Email or Password is incorect !')</script>";
-            
-        }
+
+            }
+    }
+  }
+
+        
+        
         
     }
 

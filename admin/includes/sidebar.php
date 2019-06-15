@@ -21,7 +21,7 @@
             
         </button><!-- navbar-toggle finish -->
         
-        <a href="index.php?dashboard" class="navbar-brand">Admin Area</a>
+        <a href="index.php?dashboard" class="navbar-brand">Welcome Admin</a>
         
     </div><!-- navbar-header finish -->
     
@@ -74,6 +74,7 @@
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
                 
+                
             </ul><!-- dropdown-menu finish -->
             
         </li><!-- dropdown finish -->
@@ -123,15 +124,23 @@
             </li><!-- li finish -->
             
             <li><!-- li begin -->
-                <a href="index.php?view_payments"><!-- a href begin -->
-                    <i class="fa fa-fw fa-money"></i> View Payments
-                </a><!-- a href finish -->
-            </li><!-- li finish -->
-            
-            <li><!-- li begin -->
                 <a href="logout.php"><!-- a href begin -->
                     <i class="fa fa-fw fa-power-off"></i> Log Out
                 </a><!-- a href finish -->
+            </li><!-- li finish -->
+            <li><!-- li begin -->
+                    <a href="admin_register.php"><!-- a href begin -->
+                        
+                        <i class="fa fa-fw fa-user"></i> Register new Admin
+                        
+                    </a><!-- a href finish -->
+            </li><!-- li finish -->
+            <li><!-- li begin -->
+                    <a href="admin_change_pass.php"><!-- a href begin -->
+                        
+                        <i class="fa fa-fw fa-user"></i> Change Password
+                        
+                    </a><!-- a href finish -->
             </li><!-- li finish -->
             
         </ul><!-- nav navbar-nav side-nav finish -->

@@ -2,7 +2,7 @@
 Template Name     : Lakers Webshop
 Author Name       : Web Application Security Team
 Theme URI         : localhost/lakers_webshop
-Theme Ver         : 1.1
+
 */
 
 /* General Styles */
@@ -67,7 +67,7 @@ body{
         width: 255px;
         overflow-y: auto;
         overflow-x: hidden;
-        background-color: #222222;
+        background-color: #800080;
         padding-bottom: 40px;
         border-radius: 0;
     }
