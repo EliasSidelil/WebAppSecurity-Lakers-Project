@@ -1,3 +1,5 @@
+<!-- Confirmation of delivery address -->
+
 <?php
 
   $active='Address';

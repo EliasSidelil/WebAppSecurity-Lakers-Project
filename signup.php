@@ -1,3 +1,5 @@
+<!-- Customer registration is handeled here -->
+
 <?php
 
   $active='Register';
@@ -8,9 +10,6 @@
 <?php 
 
 if(isset($_POST['register'])){
-
-    /*include_once 'db.php';
-    include_once '../functions/functions.php';*/
     
     $c_name = mysqli_real_escape_string($con, $_POST['c_name']);
     
@@ -65,7 +64,7 @@ if(isset($_POST['register'])){
         
         $_SESSION['customer_email']=$c_email;
         
-        echo "<script>alert('You have been Registered Sucessfully')</script>";
+        echo "<script>alert('You have been Registered Sucessfully, For security reason please login again')</script>";
         
         echo "<script>window.open('delivery_address.php','_self')</script>";
         
@@ -75,7 +74,7 @@ if(isset($_POST['register'])){
         
         $_SESSION['customer_email']=$c_email;
         
-        echo "<script>alert('You have been Registered Sucessfully')</script>";
+        echo "<script>alert('You have been Registered Sucessfully, For security reason please login again')</script>";
         
         echo "<script>window.open('index.php','_self')</script>";
         

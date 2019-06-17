@@ -1,3 +1,5 @@
+<!-- header inclusion
+ -->
 <?php 
 
 session_start();

@@ -1,3 +1,5 @@
+<!-- Placing order -->
+
 <?php 
 
 include("includes/db.php");

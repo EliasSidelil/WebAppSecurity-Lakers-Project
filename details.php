@@ -1,3 +1,5 @@
+<!-- Product detail page -->
+
 <?php
 
   $active='Details';

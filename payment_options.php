@@ -1,3 +1,5 @@
+<!-- Select payment method -->
+
 <div class="box"><!-- box Begin -->
    
    <?php 

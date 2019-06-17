@@ -1,3 +1,5 @@
+<!-- Identify if customer is logged in or not -->
+
 <?php 
 
     $active='Register';

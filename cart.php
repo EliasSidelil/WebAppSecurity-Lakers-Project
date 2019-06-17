@@ -1,3 +1,5 @@
+<!-- Start Cart functionality -->
+
 <?php
 
   $active='Cart';

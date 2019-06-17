@@ -1,3 +1,4 @@
+<!-- Order review befor placing order and confirming buy -->
 <?php
 
   $active='Review_Order';

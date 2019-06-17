@@ -1,3 +1,5 @@
+<!-- Most Custom made functions start from here -->
+
 <?php 
 
 

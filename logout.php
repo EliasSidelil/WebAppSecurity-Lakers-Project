@@ -1,3 +1,5 @@
+<!-- Session handling -->
+
 <?php 
 
 session_start();

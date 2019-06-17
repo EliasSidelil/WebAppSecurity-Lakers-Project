@@ -1,3 +1,5 @@
+<!-- Customer registration form -->
+
 <?php
 
   $active='Register';
